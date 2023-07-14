@@ -1,5 +1,7 @@
 *.c linguist-detectable=false
 makefile linguist-detectable=false
+Makefile linguist-detectable=false
+prebuild linguist-detectable=false
 *.o linguist-detectable=false
 *.obj linguist-detectable=false
 *.res linguist-detectable=false
