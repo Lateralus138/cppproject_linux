@@ -70,7 +70,7 @@ bool ArgParser(int argc, const char* argv[], Parameters& params, Switches &switc
         "                    be preceeded by the switch:\n"
         "                    e.g: -c ClassOne -c ClassTwo.\n"
         "\n"
-        "Switches:\n"
+        "SWITCHES:\n"
         "  -h, --help      This help screen.\n"
         "  -d, --directory Project path location.\n"
         "  -m, --main      Main source file name.\n"
