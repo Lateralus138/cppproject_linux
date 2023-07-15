@@ -17,7 +17,12 @@ jobs:
       run: |
         rootpath="$(realpath .)"
         cd $rootpath
-        ls -A
+        if [[ -x "prebuild" ]]; then
+          ./prebuild || exit 2
+        else
+          exit 1
+        fi
+        tree -a src/lib
         echo "Planned failure - [255]"
         exit 255
         cd ${rootpath}/linux || exit 127
