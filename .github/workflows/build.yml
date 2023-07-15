@@ -23,21 +23,21 @@ jobs:
           exit 127
         fi
         make releasedynamic || exit 125
-        ls release/dynamic/ 
-        echo "Planned failure - [255]"
-        exit 255
-        cd ${rootpath}/linux || exit 127
-        scripts/prebuild || exit $?
-        make releasedynamicall || exit 126
-        cppproj_linux_md5_text='{\n\t"schemaVersion": 1,\n\t"color": "2E9778",\n\t"label": "lspids MD5",\n\t"message": "PLACEHOLDER",\n\t"labelColor": "1d1d1d",\n\t"style": "for-the-badge",\n\t"namedLogo": "linux"\n}'
+        cppproj_linux_md5_text='{\n\t"schemaVersion": 1,\n\t"color": "2E9778",\n\t"label": "cppproj MD5",\n\t"message": "PLACEHOLDER",\n\t"labelColor": "1d1d1d",\n\t"style": "for-the-badge",\n\t"namedLogo": "linux"\n}'
         if ! [[ -d "${rootpath}/docs/json" ]]; then
-          mkdir -p .${rootpath}/docs/json
+          mkdir -p .${rootpath}/docs/json || exit 124
         fi
         if ! [[ -f "${rootpath}/docs/json/cppproj_linux_md5.json" ]]; then
-          touch "${rootpath}/docs/json/cppproj_linux_md5.json"
+          touch "${rootpath}/docs/json/cppproj_linux_md5.json" || exit 123
         fi
-        echo -e "$cppproj_linux_md5_text" > "${rootpath}/docs/json/cppproj_linux_md5.json"
-        sed -i "s/\"message\": \".*\"/\"message\": \"$(md5sum ${rootpath}/linux/release/dynamic/lspids | cut -d' ' -f 1)\"/g" "${rootpath}/docs/json/cppproj_linux_md5.json"
+        echo -e "$cppproj_linux_md5_text" > "${rootpath}/docs/json/cppproj_linux_md5.json" || exit 122
+        sed -i "s/\"message\": \".*\"/\"message\": \"$(md5sum ${rootpath}/release/dynamic/cppproj | cut -d' ' -f 1)\"/g" "${rootpath}/docs/json/cppproj_linux_md5.json" || exit 121
+        echo -e "=========================\n========================="
+        ls ${rootpath}/docs/json || exit 255
+        cat ${rootpath}/docs/json/cppproj_linux_md5.json" || exit 254
+        echo -e "=========================\n========================="
+        echo "Planned failure - [253]"
+        exit 255
         cd ${rootpath}/debian || exit 125
         if [[ ! -d "${rootpath}/debian/lspids-1.0.0/usr/bin" ]]; then
           mkdir -p "${rootpath}/debian/lspids-1.0.0/usr/bin" || exit 124
