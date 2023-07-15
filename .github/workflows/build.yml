@@ -18,11 +18,12 @@ jobs:
         rootpath="$(realpath .)"
         cd $rootpath
         if [[ -x "prebuild" ]]; then
-          ./prebuild || exit 127
+          ./prebuild || exit 126
         else
-          exit 126
+          exit 127
         fi
-        tree -a src
+        make releasedynamic || exit 125
+        ls src/release/dynamic/ 
         echo "Planned failure - [255]"
         exit 255
         cd ${rootpath}/linux || exit 127
