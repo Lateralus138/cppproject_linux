@@ -39,12 +39,12 @@ jobs:
         cp \
           "${rootpath}/release/dynamic/cppproj" \
           "${rootpath}/debian/cppproj-1.0.0/usr/bin/cppproj" || exit 118
+        dpkg-deb --build --root-owner-group cppproj-1.0.0 || exit 117
         echo -e "=========================\n========================="
-        ls "${rootpath}/debian/cppproj-1.0.0/usr/bin/" || exit 255
+        ls "${rootpath}/debian" || exit 255
         echo -e "=========================\n========================="
         echo "Planned failure - [254]"
         exit 254
-        fakeroot dpkg-deb --build lspids-1.0.0 || exit 122
         cppproj_debian_md5_text='{\n\t"schemaVersion": 1,\n\t"color": "2E9778",\n\t"label": "lspids-1.0.0.0.deb MD5",\n\t"message": "PLACEHOLDER",\n\t"labelColor": "1d1d1d",\n\t"style": "for-the-badge",\n\t"namedLogo": "debian"\n}'
         if ! [[ -f "${rootpath}/docs/json/cppproj_debian_md5.json" ]]; then
           touch "${rootpath}/docs/json/cppproj_debian_md5.json"
