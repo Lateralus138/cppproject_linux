@@ -6,7 +6,24 @@
 
 ***This project is*** ![Under Construction](https://img.shields.io/static/v1?logo=data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAA4AAAAOCAYAAAAfSC3RAAACmElEQVQokUWSa0iTcRTGn//26u4b6ZQ0U8lKMqykwPpgZVBEHyLp8jEoIZJADCQ0iCiStIwuZmHRioIuroQss2VkrkIrdeFckiZqdhctTXPOve8Tr7M6X8/zO+fwPEfIwy7IwQA0GgExGYQwyhCmMLRX1z2hJCJSN+xZgqAZnPgCaAUQ0EHICjSYLlKBCDdNQb7HLmeRoy3zQFnzYk/1WTckGUIXCVD+Kw+BpAxtuBXCpkN7bdXt/JL3W3J3xuHg3iTsL/NkNFWVPoWkQOj/wxooCrRhFgiTjI4n9ZVHHQObjxVEY8UGIi1zEhVFCahwdq5qvn+hHkKC0EcBigxwvAnkW3ge7L6TMi+VztOLOOKOY8ulKL68GM2emnjeLF3AZSlz2FCZ6yaHwLGv6pkv8MyxsUoHLcsLwBuHwE0rtdy2UuLWNTpmpkkszQEfnAPDAd47tbaB7NaJR+eXujfmtGTUXgFWp5uwPd8Oi1GBJEmwWYlP34L4PSFw7chPeD+MYnkWUVmy0CeNfe5N8ANIjNWpNmHzqklYrDIGRwRm2gXsM/xofRMOf1AgcbYOAfgxMvgxCmS9+dbh5A6VarxuIMdBDoJ0g+vSreytNpAEux7qqWrK82I+kC2xYOAzyFbz5QNJPrXhdRo4XK/n3WILkxPsbKqwsr8xBB3PjukhGyJJv+qqB+QvkN0mR2Fim5pU1hobzxTYOPbcyJoTNpoAlu6wdZKvIslR0O9VXe0Clc5p2Ge4WDh36ux3ThM/1RqnNhXvilU32cjvINtAf4cKdkzlSHpBTqgNY11JfLtFA+o14NU8Wx/piggNfg2yGVR8EF9/dP37PyCIoDQLs8z9hmv71nsC4wFz9klX2tD4/AEG+gBoQ7KghD8MZ2xdnt7s7wAAAABJRU5ErkJggg==&label=Under&message=Construction&style=for-the-badge&labelColor=1D1D1D&color=ffff99)
 
-- [ ] Add TOC
+- [CPP Project ](#cpp-project-)
+  - [About](#about)
+    - [Description](#description)
+    - [Motivation](#motivation)
+  - [Usage](#usage)
+    - [Environment](#environment)
+    - [How To Use](#how-to-use)
+    - [Examples](#examples)
+  - [Project Information](#project-information)
+    - [Source File Quality](#source-file-quality)
+    - [File MD5 Hashes](#file-md5-hashes)
+    - [Current Linux MD5](#current-linux-md5)
+    - [Current Debian MD5](#current-debian-md5)
+    - [Other Miscellaneous File Information](#other-miscellaneous-file-information)
+  - [Media](#media)
+  - [Support Me If You Like](#support-me-if-you-like)
+  - [LICENSE](#license)
+
 
 ---
 
@@ -16,15 +33,11 @@
 
 ### Description
 
-- [x] Add Description
-
 This is a command line tool to help initiate my custom Linux **C++** (*g++*) project system by creating the directory tree, Makefile, main source file, possible prebuild script, possible class files, and all the basic boilerplate code I almost always start with.
 
 I have my own style of programming and, of course, my style is not for everyone, but if you would like to use my system then by all means... More information on my style is provided below.
 
 ### Motivation
-
-- [x] Add Motivation
 
 I have been meaning to write this for a long time and, of course, time is hard to find, but I finally got around to writing this. For years I have usually written scripts and/or copied old project files to a new project to help start my projects, but with this I can quickly initiate my projects within a minute and usually less. Especially times when I'm on a roll and start many projects all at once I can script the project creation with config file. 
 
@@ -33,8 +46,6 @@ I have been meaning to write this for a long time and, of course, time is hard t
 ## Usage
 
 ### Environment
-
-- [x] Add Environment
 
 &#x54;&#x68;&#x69;&#x73;&#x20;&#x69;&#x73;&#x20;&#x61;&#x6E;&#x20;&#x6F;&#x70;&#x65;&#x6E;&#x2D;&#x73;&#x6F;&#x75;&#x72;&#x63;&#x65;&#x20;&lpar;[FOSS](https://duckduckgo.com/?q=foss&ia=web)&rpar;&#x20;&#x63;&#x6F;&#x6D;&#x6D;&#x61;&#x6E;&#x64;&#x20;&#x6C;&#x69;&#x6E;&#x65;&#x20;&#x75;&#x74;&#x69;&#x6C;&#x69;&#x74;&#x79;&#x20;&#x66;&#x6F;&#x72;&#x20;&#x75;&#x73;&#x65;&#x20;&#x69;&#x6E;&#x20;&#x4C;&#x69;&#x6E;&#x75;&#x78;&#x20;&#x73;&#x68;&#x65;&#x6C;&#x6C;&#x73;&#x20;&lpar;&#x74;&#x65;&#x72;&#x6D;&#x69;&#x6E;&#x61;&#x6C;&#x73;&sol;&#x74;&#x74;&#x79;&#x73;&sol;&#x65;&#x74;&#x63;&period;&rpar;&period;&#x20;&#x54;&#x68;&#x69;&#x73;&#x20;&#x63;&#x61;&#x6E;&#x20;&#x62;&#x65;&#x20;&#x62;&#x75;&#x69;&#x6C;&#x74;&#x20;&#x66;&#x72;&#x6F;&#x6D;&#x20;&#x73;&#x6F;&#x75;&#x72;&#x63;&#x65;&#x20;&lpar;&#x61;&#x73;&#x20;&#x70;&#x65;&#x72;&#x20;&#x74;&#x68;&#x65;&#x20;&#x4C;&#x49;&#x43;&#x45;&#x4E;&#x53;&#x45;&#x20;&#x66;&#x69;&#x6C;&#x65;&#x20;&#x70;&#x72;&#x6F;&#x76;&#x69;&#x64;&#x65;&#x64;&rpar;&comma;&#x20;&#x75;&#x73;&#x65;&#x64;&#x20;&#x70;&#x6F;&#x72;&#x74;&#x61;&#x62;&#x6C;&#x79;&#x20;&lpar;&#x73;&#x69;&#x6E;&#x67;&#x6C;&#x65;&#x20;&#x65;&#x78;&#x65;&#x63;&#x75;&#x74;&#x61;&#x62;&#x6C;&#x65;&#x20;&#x70;&#x75;&#x74;&#x20;&#x77;&#x68;&#x65;&#x72;&#x65;&#x76;&#x65;&#x72;&#x20;&#x79;&#x6F;&#x75;&#x20;&#x6C;&#x69;&#x6B;&#x65;&rpar;&comma;&#x20;&#x6F;&#x72;&#x20;&#x69;&#x6E;&#x73;&#x74;&#x61;&#x6C;&#x6C;&#x65;&#x64;&#x20;&#x76;&#x69;&#x61;&#x20;&#x74;&#x68;&#x65;&#x20;&#x70;&#x72;&#x6F;&#x76;&#x69;&#x64;&#x65;&#x64;&#x20;&#x44;&#x65;&#x62;&#x69;&#x61;&#x6E;&#x20;&lpar;&period;&#x64;&#x65;&#x62;&rpar;&#x20;&#x70;&#x61;&#x63;&#x6B;&#x61;&#x67;&#x65;&period;
 
@@ -116,8 +127,6 @@ cppproj - 1.0.0                                                                 
 
 ### How To Use
 
-- [x] Add How To Use
-
 This tool can can be used like any other command line tool directly from the command line, a script, or another program.
 
 This system only involves *GCC*/*make* (I do not use CMAKE) and can be imported into some IDEs (*VS Code* and especially *Code::Blocks* (you can use a custom Makefile in the build options and set prebulds there) which I use).
@@ -148,8 +157,6 @@ As stated above the *Makefile* has many options (but not everything under the su
 The *Makefile* defaults to *C++20*. To learn more about my system just study the *Makefile* and it should be fairly clear.
 
 ### Examples
-
-- [x] Add Examples
 
 Help message:
 
@@ -360,7 +367,13 @@ cpp_project
 
 ## Media
 
-- [ ] Add Media
+Logo
+
+![Logo](docs/media/logo/cppproj.png)
+
+Help message
+
+![HELP MESSAGE](docs/media/screenshots/help.png)
 
 ---
 
