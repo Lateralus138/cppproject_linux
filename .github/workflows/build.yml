@@ -32,19 +32,18 @@ jobs:
         fi
         echo -e "$cppproj_linux_md5_text" > "${rootpath}/docs/json/cppproj_linux_md5.json" || exit 122
         sed -i "s/\"message\": \".*\"/\"message\": \"$(md5sum ${rootpath}/release/dynamic/cppproj | cut -d' ' -f 1)\"/g" "${rootpath}/docs/json/cppproj_linux_md5.json" || exit 121
-        echo -e "=========================\n========================="
-        ls ${rootpath}/docs/json || exit 255
-        cat "${rootpath}/docs/json/cppproj_linux_md5.json" || exit 254
-        echo -e "=========================\n========================="
-        echo "Planned failure - [253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]"
-        exit 255
-        cd ${rootpath}/debian || exit 125
-        if [[ ! -d "${rootpath}/debian/lspids-1.0.0/usr/bin" ]]; then
-          mkdir -p "${rootpath}/debian/lspids-1.0.0/usr/bin" || exit 124
+        cd ${rootpath}/debian || exit 120
+        if [[ ! -d "${rootpath}/debian/cppproj-1.0.0/usr/bin" ]]; then
+          mkdir -p "${rootpath}/debian/cppproj-1.0.0/usr/bin" || exit 119
         fi
         cp \
-          "${rootpath}/linux/release/dynamic/lspids" \
-          "${rootpath}/debian/lspids-1.0.0/usr/bin/lspids" || exit 123
+          "${rootpath}/src/release/dynamic/cppproj" \
+          "${rootpath}/debian/cppproj-1.0.0/usr/bin/cppproj" || exit 118
+        echo -e "=========================\n========================="
+        ls "${rootpath}/debian/cppproj-1.0.0/usr/bin/" || exit 255
+        echo -e "=========================\n========================="
+        echo "Planned failure - [254]"
+        exit 254
         fakeroot dpkg-deb --build lspids-1.0.0 || exit 122
         cppproj_debian_md5_text='{\n\t"schemaVersion": 1,\n\t"color": "2E9778",\n\t"label": "lspids-1.0.0.0.deb MD5",\n\t"message": "PLACEHOLDER",\n\t"labelColor": "1d1d1d",\n\t"style": "for-the-badge",\n\t"namedLogo": "debian"\n}'
         if ! [[ -f "${rootpath}/docs/json/cppproj_debian_md5.json" ]]; then
