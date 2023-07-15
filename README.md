@@ -40,6 +40,80 @@ I have been meaning to write this for a long time and, of course, time is hard t
 
 &#x54;&#x68;&#x65;&#x20;&#x72;&#x65;&#x63;&#x6F;&#x6D;&#x6D;&#x65;&#x6E;&#x64;&#x65;&#x64;&#x20;&#x6D;&#x65;&#x74;&#x68;&#x6F;&#x64;&#x20;&#x6F;&#x66;&#x20;&#x75;&#x73;&#x65;&#x20;&#x69;&#x73;&#x20;&#x76;&#x69;&#x61;&#x20;&#x74;&#x68;&#x65;&#x20;&#x44;&#x65;&#x62;&#x69;&#x61;&#x6E;&#x20;&#x70;&#x61;&#x63;&#x6B;&#x61;&#x67;&#x65;&#x20;&#x69;&#x6E;&#x73;&#x74;&#x61;&#x6C;&#x6C;&#x61;&#x74;&#x69;&#x6F;&#x6E;&#x20;&#x66;&#x6F;&#x72;&#x20;&#x74;&#x68;&#x65;&#x20;&#x44;&#x65;&#x62;&#x69;&#x61;&#x6E;&#x20;&lpar;&#x61;&#x70;&#x74;&comma;&#x20;&#x64;&#x65;&#x62;&rpar;&#x20;&#x70;&#x61;&#x63;&#x6B;&#x61;&#x67;&#x65;&#x72;&#x20;&#x6D;&#x61;&#x6E;&#x61;&#x67;&#x65;&#x72;&comma;&#x20;&#x62;&#x75;&#x74;&#x20;&#x74;&#x68;&#x65;&#x72;&#x65;&#x20;&#x61;&#x72;&#x65;&#x20;&#x6F;&#x74;&#x68;&#x65;&#x72;&#x20;&#x6D;&#x65;&#x74;&#x68;&#x6F;&#x64;&#x73;&#x20;&#x70;&#x72;&#x6F;&#x76;&#x69;&#x64;&#x65;&#x64;&#x20;&#x68;&#x65;&#x72;&#x65;&#x20;&#x6F;&#x72;&#x20;&#x69;&#x66;&#x20;&#x79;&#x6F;&#x75;&#x20;&#x77;&#x6F;&#x75;&#x6C;&#x64;&#x20;&#x63;&#x61;&#x72;&#x65;&#x20;&#x74;&#x6F;&#x20;&#x70;&#x72;&#x6F;&#x76;&#x69;&#x64;&#x65;&#x20;&#x61;&#x6E;&#x20;&#x69;&#x6E;&#x73;&#x74;&#x61;&#x6C;&#x6C;&#x65;&#x72;&#x20;&#x66;&#x6F;&#x72;&#x20;&#x61;&#x20;&#x64;&#x69;&#x66;&#x66;&#x65;&#x72;&#x65;&#x6E;&#x74;&#x20;&#x70;&#x61;&#x63;&#x6B;&#x61;&#x67;&#x65;&#x20;&#x6D;&#x61;&#x6E;&#x61;&#x67;&#x65;&#x72;&#x20;&#x74;&#x68;&#x65;&#x6E;&#x20;&#x70;&#x6C;&#x65;&#x61;&#x73;&#x65;&#x20;&#x66;&#x6F;&#x72;&#x6B;&#x20;&#x74;&#x68;&#x69;&#x73;&#x20;&#x70;&#x72;&#x6F;&#x6A;&#x65;&#x63;&#x74;&comma;&#x20;&#x62;&#x75;&#x69;&#x6C;&#x64;&#x20;&#x74;&#x68;&#x65;&#x20;&#x61;&#x70;&#x70;&#x72;&#x6F;&#x70;&#x72;&#x69;&#x61;&#x74;&#x65;&#x20;&#x77;&#x6F;&#x72;&#x6B;&#x66;&#x6C;&#x6F;&#x77;&#x20;&#x61;&#x6E;&#x64;&#x20;&#x73;&#x6F;&#x75;&#x72;&#x63;&#x65;&#x20;&#x66;&#x69;&#x6C;&#x65;&#x73;&comma;&#x20;&#x61;&#x6E;&#x64;&#x20;&#x6D;&#x61;&#x6B;&#x65;&#x20;&#x61;&#x20;&#x70;&#x75;&#x6C;&#x6C;&#x2D;&#x72;&#x65;&#x71;&#x75;&#x65;&#x73;&#x74;&period;
 
+The *.deb* installer provides a *Bash Completion* file, a *Man Page*, changelog, icons, and (of course) a way to uninstall.
+
+Man Page:
+
+```Shell
+
+CPPPROJ(1)                                                                                                                                                                                                                                                                                                                                                       CPPPROJ(1)
+
+NAME
+       cppproj - A Linux command line tool to initiate Ian Pride’s personal and custom C++ project.
+
+SYNOPSIS
+       cppproj [-h | –help] | [-d | –directory] <DIRECTORY PATH> [-m | –main] <MAIN FILE NAME> [-c | –class] <CLASS FILE NAME> [-p | –prebuild]
+
+DESCRIPTION
+       A Linux command line tool to initiate my personal and custom C++ project directory structure, files, and basic boilerplate code.
+
+OPTIONS
+       -h, --help
+              This HELP message.
+
+       -d, --directory
+              Project path location.
+
+       -m, --main
+              Main source file name.
+
+       -c, --class
+              Class file name.
+
+       -p, --prebuild
+              Create a prebuild file to build precompiled header, object file, and library archive file.
+
+EXAMPLES
+       $      cppproj --help
+
+       $      cppproj --directory ~/cppl/projectname --class ClassName -p
+
+EXIT CODES
+       0      No errors.
+
+       1      No argument provide for –main switch.
+
+       2      Invalid argument provided for –main switch.
+
+       3      No argument provide for –class switch.
+
+       4      Invalid argument provided for –class switch.
+
+       5      No argument provide for –directory switch.
+
+       6      Invalid argument provided for –directory switch.
+
+       7      Filesystem error when checking if a directory exists.
+
+       8      Filesystem error when trying to create a directory.
+
+       9      Filesystem error when checking if a file exists.
+
+       10     Filesystem error when trying to create a file.
+
+CONTACT
+       Ian Pride
+
+       This Project
+
+       GitHub
+
+AUTHORS
+       Ian Pride.
+
+cppproj - 1.0.0                                                                                                                                                       Fri Jul 14 06:35:07 PM UTC 2023                                                                                                                                                            CPPPROJ(1)
+```
+
 ### How To Use
 
 - [x] Add How To Use
@@ -50,7 +124,7 @@ This system only involves *GCC*/*make* (I do not use CMAKE) and can be imported 
 
 A basic example creates a project directory tree and files in the following format (*pch.cpp* is not usually necessary, but created just in case. It's the precompiled header source companion and rarely used and created just like any other class file):
 
-```
+```Shell
  ᗛ⦗flux⦘@⦗⇛⦘ᗘ cppproj -d ~/cpp_project
  ...
  ᗛ⦗flux⦘@⦗⇛⦘ᗘ tree cpp_project/
@@ -75,7 +149,174 @@ The *Makefile* defaults to *C++20*. To learn more about my system just study the
 
 ### Examples
 
-- [ ] Add Examples
+- [x] Add Examples
+
+Help message:
+
+```Shell
+ ᗛ⦗flux⦘@⦗⇛⦘ᗘ cppproj --help
+
+CPP Project - Create a custom Linux C++ tree and
+              files project from the command line.
+              Customn project style developed by
+              Ian Pride using a normal (but custom
+              ) Makefile system (no CMAKE) with a
+              possible prebuild file to help build
+              the precompiled header, objects, and
+              library archive.
+
+USAGE:
+  cppproj [-h | --help] |
+          [-d | --directory] <DIRECTORY PATH>
+          [-m | --main] <MAIN FILE NAME>
+          [-c | --class] <CLASS FILE NAME>
+          [-p | --prebuild]
+
+PARAMETERS:
+  DIRECTORY PATH:   Parent path to the project.
+  MAIN FILE NAME:   Name of the main source file
+                    without the extension.
+  CLASS FILE NAME:  Create class files by name.
+                    Each different file name must
+                    be preceeded by the switch:
+                    e.g: -c ClassOne -c ClassTwo.
+
+SWITCHES:
+  -h, --help      This help screen.
+  -d, --directory Project path location.
+  -m, --main      Main source file name.
+  -c, --class     Class file name.
+  -p, --prebuild  Create a prebuild file to build
+                  precompiled header, object files
+                  , and library archive file.
+
+ ᗛ⦗flux⦘@⦗⇛⦘ᗘ 
+```
+
+Create a basic project in the current directory (`./`):
+
+```Shell
+ ᗛ⦗flux⦘@⦗cpp_project⦘ᗘ cppproj
+Checking if ./src/include exists...
+./src/include does not exist; attempting to create directory...
+./src/include was created successfully...
+Checking if ./src/lib exists...
+./src/lib does not exist; attempting to create directory...
+./src/lib was created successfully...
+Checking if ./src/main.cpp exists...
+./src/main.cpp does not exist; attempting to create file...
+./src/main.cpp created successfully.
+Checking if ./Makefile exists...
+./Makefile does not exist; attempting to create file...
+./Makefile created successfully.
+Checking if ./src/include/pch.cpp exists...
+./src/include/pch.cpp does not exist; attempting to create file...
+./src/include/pch.cpp created successfully.
+Checking if ./src/include/pch.h exists...
+./src/include/pch.h does not exist; attempting to create file...
+./src/include/pch.h created successfully.
+ ᗛ⦗flux⦘@⦗cpp_project⦘ᗘ tree
+.
+├── Makefile
+└── src
+    ├── include
+    │   ├── pch.cpp
+    │   └── pch.h
+    ├── lib
+    └── main.cpp
+
+3 directories, 4 files
+ ᗛ⦗flux⦘@⦗cpp_project⦘ᗘ 
+```
+
+Create a project with a provided directory, provide a prebuild script, and change the name of the main source file:
+
+```Shell
+ ᗛ⦗flux⦘@⦗⇛⦘ᗘ projName="cpp_project"
+ ᗛ⦗flux⦘@⦗⇛⦘ᗘ cppproj -d $projName -m $projName -p
+Checking if cpp_project/src/include exists...
+cpp_project/src/include does not exist; attempting to create directory...
+cpp_project/src/include was created successfully...
+Checking if cpp_project/src/lib exists...
+cpp_project/src/lib does not exist; attempting to create directory...
+cpp_project/src/lib was created successfully...
+Checking if cpp_project/src/cpp_project.cpp exists...
+cpp_project/src/cpp_project.cpp does not exist; attempting to create file...
+cpp_project/src/cpp_project.cpp created successfully.
+Checking if cpp_project/Makefile exists...
+cpp_project/Makefile does not exist; attempting to create file...
+cpp_project/Makefile created successfully.
+Checking if cpp_project/src/include/pch.cpp exists...
+cpp_project/src/include/pch.cpp does not exist; attempting to create file...
+cpp_project/src/include/pch.cpp created successfully.
+Checking if cpp_project/src/include/pch.h exists...
+cpp_project/src/include/pch.h does not exist; attempting to create file...
+cpp_project/src/include/pch.h created successfully.
+Checking if cpp_project/prebuild exists...
+cpp_project/prebuild does not exist; attempting to create file...
+cpp_project/prebuild created successfully.
+ ᗛ⦗flux⦘@⦗⇛⦘ᗘ tree $projName
+cpp_project
+├── Makefile
+├── prebuild
+└── src
+    ├── cpp_project.cpp
+    ├── include
+    │   ├── pch.cpp
+    │   └── pch.h
+    └── lib
+
+3 directories, 5 files
+ ᗛ⦗flux⦘@⦗⇛⦘ᗘ 
+```
+
+Add class files to an existing project (same goes with a new project):
+
+```Shell
+ ᗛ⦗flux⦘@⦗⇛⦘ᗘ projName="cpp_project"
+ ᗛ⦗flux⦘@⦗⇛⦘ᗘ cppproj -d $projName -m $projName -c ClassNameA -c ClassNameB
+Checking if cpp_project/src/include exists...
+cpp_project/src/include already exists and does not need to be created...
+Checking if cpp_project/src/lib exists...
+cpp_project/src/lib already exists and does not need to be created...
+Checking if cpp_project/src/include/ClassNameA.cpp exists...
+cpp_project/src/include/ClassNameA.cpp does not exist; attempting to create file...
+cpp_project/src/include/ClassNameA.cpp created successfully.
+Checking if cpp_project/src/include/ClassNameA.h exists...
+cpp_project/src/include/ClassNameA.h does not exist; attempting to create file...
+cpp_project/src/include/ClassNameA.h created successfully.
+Checking if cpp_project/src/include/ClassNameB.cpp exists...
+cpp_project/src/include/ClassNameB.cpp does not exist; attempting to create file...
+cpp_project/src/include/ClassNameB.cpp created successfully.
+Checking if cpp_project/src/include/ClassNameB.h exists...
+cpp_project/src/include/ClassNameB.h does not exist; attempting to create file...
+cpp_project/src/include/ClassNameB.h created successfully.
+Checking if cpp_project/src/cpp_project.cpp exists...
+cpp_project/src/cpp_project.cpp already exists and does not need to be created...
+Checking if cpp_project/Makefile exists...
+cpp_project/Makefile already exists and does not need to be created...
+Checking if cpp_project/src/include/pch.cpp exists...
+cpp_project/src/include/pch.cpp already exists and does not need to be created...
+Checking if cpp_project/src/include/pch.h exists...
+cpp_project/src/include/pch.h already exists and does not need to be created...
+ ᗛ⦗flux⦘@⦗⇛⦘ᗘ tree $projName
+cpp_project
+├── Makefile
+├── prebuild
+└── src
+    ├── cpp_project.cpp
+    ├── include
+    │   ├── ClassNameA.cpp
+    │   ├── ClassNameA.h
+    │   ├── ClassNameB.cpp
+    │   ├── ClassNameB.h
+    │   ├── pch.cpp
+    │   └── pch.h
+    └── lib
+
+3 directories, 9 files
+ ᗛ⦗flux⦘@⦗⇛⦘ᗘ 
+```
 
 ---
 
