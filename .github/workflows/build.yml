@@ -37,7 +37,7 @@ jobs:
           mkdir -p "${rootpath}/debian/cppproj-1.0.0/usr/bin" || exit 119
         fi
         cp \
-          "${rootpath}/src/release/dynamic/cppproj" \
+          "${rootpath}/release/dynamic/cppproj" \
           "${rootpath}/debian/cppproj-1.0.0/usr/bin/cppproj" || exit 118
         echo -e "=========================\n========================="
         ls "${rootpath}/debian/cppproj-1.0.0/usr/bin/" || exit 255
