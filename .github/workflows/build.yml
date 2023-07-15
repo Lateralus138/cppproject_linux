@@ -40,17 +40,18 @@ jobs:
           "${rootpath}/release/dynamic/cppproj" \
           "${rootpath}/debian/cppproj-1.0.0/usr/bin/cppproj" || exit 118
         dpkg-deb --build --root-owner-group cppproj-1.0.0 || exit 117
-        echo -e "=========================\n========================="
-        ls "${rootpath}/debian" || exit 255
-        echo -e "=========================\n========================="
-        echo "Planned failure - [254]"
-        exit 254
-        cppproj_debian_md5_text='{\n\t"schemaVersion": 1,\n\t"color": "2E9778",\n\t"label": "lspids-1.0.0.0.deb MD5",\n\t"message": "PLACEHOLDER",\n\t"labelColor": "1d1d1d",\n\t"style": "for-the-badge",\n\t"namedLogo": "debian"\n}'
+        cppproj_debian_md5_text='{\n\t"schemaVersion": 1,\n\t"color": "2E9778",\n\t"label": "cppproj-1.0.0.0.deb MD5",\n\t"message": "PLACEHOLDER",\n\t"labelColor": "1d1d1d",\n\t"style": "for-the-badge",\n\t"namedLogo": "debian"\n}'
         if ! [[ -f "${rootpath}/docs/json/cppproj_debian_md5.json" ]]; then
-          touch "${rootpath}/docs/json/cppproj_debian_md5.json"
+          touch "${rootpath}/docs/json/cppproj_debian_md5.json" || exit 116
         fi
-        echo -e "$cppproj_debian_md5_text" > "${rootpath}/docs/json/cppproj_debian_md5.json"
-        sed -i "s/\"message\": \".*\"/\"message\": \"$(md5sum ${rootpath}/debian/lspids-1.0.0.deb | cut -d' ' -f 1)\"/g" "${rootpath}/docs/json/cppproj_debian_md5.json"
+        echo -e "$cppproj_debian_md5_text" > "${rootpath}/docs/json/cppproj_debian_md5.json" || exit 115
+        sed -i "s/\"message\": \".*\"/\"message\": \"$(md5sum ${rootpath}/debian/cppproj-1.0.0.deb | cut -d' ' -f 1)\"/g" "${rootpath}/docs/json/cppproj_debian_md5.json" || exit 114
+        echo -e "=========================\n========================="
+        ls "${rootpath}/docs/json" || exit 255
+        cat "${rootpath}/docs/json/cppproj_debian_md5.json" || exit 254
+        echo -e "=========================\n========================="
+        echo "Planned failure - [253]"
+        exit 253
         sudo apt update  || exit 121
         sudo apt install g++-arm-linux-gnueabihf g++-aarch64-linux-gnu -y  || exit 120
         cd "${rootpath}/linux"
