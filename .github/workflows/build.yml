@@ -57,7 +57,7 @@ jobs:
         allowUpdates: True
         tag: 1.0.0
         name: Pre-release
-        bodyFile: ./docs/md/pre-release.md
-        prerelease: True
+        bodyFile: ./docs/md/release.md
+        prerelease: False
         artifacts: ./release/dynamic/cppproj,./debian/cppproj-1.0.0.deb
         token: ${{ secrets.GITHUB_TOKEN }}
