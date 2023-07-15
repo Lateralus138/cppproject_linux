@@ -42,7 +42,36 @@ I have been meaning to write this for a long time and, of course, time is hard t
 
 ### How To Use
 
-- [ ] Add How To Use
+- [x] Add How To Use
+
+This tool can can be used like any other command line tool directly from the command line, a script, or another program.
+
+This system only involves *GCC*/*make* (I do not use CMAKE) and can be imported into some IDEs (*VS Code* and especially *Code::Blocks* (you can use a custom Makefile in the build options and set prebulds there) which I use).
+
+A basic example creates a project directory tree and files in the following format (*pch.cpp* is not usually necessary, but created just in case. It's the precompiled header source companion and rarely used and created just like any other class file):
+
+```
+ ᗛ⦗flux⦘@⦗⇛⦘ᗘ cppproj -d ~/cpp_project
+ ...
+ ᗛ⦗flux⦘@⦗⇛⦘ᗘ tree cpp_project/
+cpp_project/
+├── Makefile
+└── src
+    ├── include
+    │   ├── pch.cpp
+    │   └── pch.h
+    ├── lib
+    └── main.cpp
+
+3 directories, 4 files
+ ᗛ⦗flux⦘@⦗⇛⦘ᗘ 
+```
+
+All headers (class, pch, and all else) and their corresponding source files are located in the `src/include` directory and all object files (`*.o`) and library archives (`*.a`, archive of all extra objects) are compiled to `src/lib`. The *Makefile* provides many commands to do everything with this structure in mind. If the *prebuild* script is created with the `-p` or `--prebuild` switch it will compile all of the objects from sources in `src/include` and create the archive and compile precompiled headers included in *pch.h* (*pcp.h*->*pch.gch*).
+
+As stated above the *Makefile* has many options (but not everything under the sun, of course) and many of which you may never use, but are there if needed and, of course, can be altered or added to to fit any needs.
+
+The *Makefile* defaults to *C++20*. To learn more about my system just study the *Makefile* and it should be fairly clear.
 
 ### Examples
 
