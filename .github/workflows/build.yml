@@ -56,7 +56,7 @@ jobs:
       with:
         allowUpdates: True
         tag: 1.0.0
-        name: Pre-release
+        name: Stable Release
         bodyFile: ./docs/md/release.md
         prerelease: False
         artifacts: ./release/dynamic/cppproj,./debian/cppproj-1.0.0.deb
