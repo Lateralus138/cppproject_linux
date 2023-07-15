@@ -16,11 +16,17 @@
 
 ### Description
 
-- [ ] Add Description
+- [x] Add Description
+
+This is a command line tool to help initiate my custom Linux **C++** (*g++*) project system by creating the directory tree, Makefile, main source file, possible prebuild script, possible class files, and all the basic boilerplate code I almost always start with.
+
+I have my own style of programming and, of course, my style is not for everyone, but if you would like to use my system then by all means... More information on my style is provided below.
 
 ### Motivation
 
-- [ ] Add Motivation
+- [x] Add Motivation
+
+I have been meaning to write this for a long time and, of course, time is hard to find, but I finally got around to writing this. For years I have usually written scripts and/or copied old project files to a new project to help start my projects, but with this I can quickly initiate my projects within a minute and usually less. Especially times when I'm on a roll and start many projects all at once I can script the project creation with config file. 
 
 ---
 
