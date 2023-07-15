@@ -34,9 +34,9 @@ jobs:
         sed -i "s/\"message\": \".*\"/\"message\": \"$(md5sum ${rootpath}/release/dynamic/cppproj | cut -d' ' -f 1)\"/g" "${rootpath}/docs/json/cppproj_linux_md5.json" || exit 121
         echo -e "=========================\n========================="
         ls ${rootpath}/docs/json || exit 255
-        cat ${rootpath}/docs/json/cppproj_linux_md5.json" || exit 254
+        cat "${rootpath}/docs/json/cppproj_linux_md5.json" || exit 254
         echo -e "=========================\n========================="
-        echo "Planned failure - [253]"
+        echo "Planned failure - [253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]"
         exit 255
         cd ${rootpath}/debian || exit 125
         if [[ ! -d "${rootpath}/debian/lspids-1.0.0/usr/bin" ]]; then
