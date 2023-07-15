@@ -52,16 +52,12 @@ jobs:
         git config --global user.email 'Lateralus138@users.noreply.github.com' || exit 111
         git commit --allow-empty -am "Pushed $(printf '%s ' ${rootpath}/docs/json/*) to master. - $(date -u)" || exit 110
         git push --force origin master || exit 109
-        echo -e "=========================\n========================="
-        echo -e "=========================\n========================="
-        echo "Planned failure - [255]"
-        exit 255
     - uses: ncipollo/release-action@v1
       with:
         allowUpdates: True
         tag: 1.0.0
-        name: Stable Release
+        name: Pre-release
         bodyFile: ./docs/md/pre-release.md
         prerelease: True
-        artifacts: ./linux/release/dynamic/lspids,./debian/lspids-1.0.0.deb,./linux/android/static/32/lspids.arm32,./linux/android/static/64/lspids.aarch64
+        artifacts: ./release/dynamic/cppproj,./debian/cppproj-1.0.0.deb
         token: ${{ secrets.GITHUB_TOKEN }}
