@@ -21,15 +21,15 @@ jobs:
         cd ${rootpath}/linux || exit 127
         scripts/prebuild || exit $?
         make releasedynamicall || exit 126
-        lspids_linux_md5_text='{\n\t"schemaVersion": 1,\n\t"color": "2E9778",\n\t"label": "lspids MD5",\n\t"message": "PLACEHOLDER",\n\t"labelColor": "1d1d1d",\n\t"style": "for-the-badge",\n\t"namedLogo": "linux"\n}'
+        cppproj_linux_md5_text='{\n\t"schemaVersion": 1,\n\t"color": "2E9778",\n\t"label": "lspids MD5",\n\t"message": "PLACEHOLDER",\n\t"labelColor": "1d1d1d",\n\t"style": "for-the-badge",\n\t"namedLogo": "linux"\n}'
         if ! [[ -d "${rootpath}/docs/json" ]]; then
           mkdir -p .${rootpath}/docs/json
         fi
-        if ! [[ -f "${rootpath}/docs/json/lspids_linux_md5.json" ]]; then
-          touch "${rootpath}/docs/json/lspids_linux_md5.json"
+        if ! [[ -f "${rootpath}/docs/json/cppproj_linux_md5.json" ]]; then
+          touch "${rootpath}/docs/json/cppproj_linux_md5.json"
         fi
-        echo -e "$lspids_linux_md5_text" > "${rootpath}/docs/json/lspids_linux_md5.json"
-        sed -i "s/\"message\": \".*\"/\"message\": \"$(md5sum ${rootpath}/linux/release/dynamic/lspids | cut -d' ' -f 1)\"/g" "${rootpath}/docs/json/lspids_linux_md5.json"
+        echo -e "$cppproj_linux_md5_text" > "${rootpath}/docs/json/cppproj_linux_md5.json"
+        sed -i "s/\"message\": \".*\"/\"message\": \"$(md5sum ${rootpath}/linux/release/dynamic/lspids | cut -d' ' -f 1)\"/g" "${rootpath}/docs/json/cppproj_linux_md5.json"
         cd ${rootpath}/debian || exit 125
         if [[ ! -d "${rootpath}/debian/lspids-1.0.0/usr/bin" ]]; then
           mkdir -p "${rootpath}/debian/lspids-1.0.0/usr/bin" || exit 124
@@ -38,29 +38,29 @@ jobs:
           "${rootpath}/linux/release/dynamic/lspids" \
           "${rootpath}/debian/lspids-1.0.0/usr/bin/lspids" || exit 123
         fakeroot dpkg-deb --build lspids-1.0.0 || exit 122
-        lspids_debian_md5_text='{\n\t"schemaVersion": 1,\n\t"color": "2E9778",\n\t"label": "lspids-1.0.0.0.deb MD5",\n\t"message": "PLACEHOLDER",\n\t"labelColor": "1d1d1d",\n\t"style": "for-the-badge",\n\t"namedLogo": "debian"\n}'
-        if ! [[ -f "${rootpath}/docs/json/lspids_debian_md5.json" ]]; then
-          touch "${rootpath}/docs/json/lspids_debian_md5.json"
+        cppproj_debian_md5_text='{\n\t"schemaVersion": 1,\n\t"color": "2E9778",\n\t"label": "lspids-1.0.0.0.deb MD5",\n\t"message": "PLACEHOLDER",\n\t"labelColor": "1d1d1d",\n\t"style": "for-the-badge",\n\t"namedLogo": "debian"\n}'
+        if ! [[ -f "${rootpath}/docs/json/cppproj_debian_md5.json" ]]; then
+          touch "${rootpath}/docs/json/cppproj_debian_md5.json"
         fi
-        echo -e "$lspids_debian_md5_text" > "${rootpath}/docs/json/lspids_debian_md5.json"
-        sed -i "s/\"message\": \".*\"/\"message\": \"$(md5sum ${rootpath}/debian/lspids-1.0.0.deb | cut -d' ' -f 1)\"/g" "${rootpath}/docs/json/lspids_debian_md5.json"
+        echo -e "$cppproj_debian_md5_text" > "${rootpath}/docs/json/cppproj_debian_md5.json"
+        sed -i "s/\"message\": \".*\"/\"message\": \"$(md5sum ${rootpath}/debian/lspids-1.0.0.deb | cut -d' ' -f 1)\"/g" "${rootpath}/docs/json/cppproj_debian_md5.json"
         sudo apt update  || exit 121
         sudo apt install g++-arm-linux-gnueabihf g++-aarch64-linux-gnu -y  || exit 120
         cd "${rootpath}/linux"
         make android32staticall || exit 119
-        lspids_arm32_md5_text='{\n\t"schemaVersion": 1,\n\t"color": "2E9778",\n\t"label": "lspids.arm32 MD5",\n\t"message": "PLACEHOLDER",\n\t"labelColor": "1d1d1d",\n\t"style": "for-the-badge",\n\t"namedLogo": "android"\n}'
-        if ! [[ -f "${rootpath}/docs/json/lspids_arm32_md5.json" ]]; then
-          touch "${rootpath}/docs/json/lspids_arm32_md5.json"
+        cppproj_arm32_md5_text='{\n\t"schemaVersion": 1,\n\t"color": "2E9778",\n\t"label": "lspids.arm32 MD5",\n\t"message": "PLACEHOLDER",\n\t"labelColor": "1d1d1d",\n\t"style": "for-the-badge",\n\t"namedLogo": "android"\n}'
+        if ! [[ -f "${rootpath}/docs/json/cppproj_arm32_md5.json" ]]; then
+          touch "${rootpath}/docs/json/cppproj_arm32_md5.json"
         fi
-        echo -e "$lspids_arm32_md5_text" > "${rootpath}/docs/json/lspids_arm32_md5.json"
-        sed -i "s/\"message\": \".*\"/\"message\": \"$(md5sum ${rootpath}/linux/android/static/32/lspids.arm32 | cut -d' ' -f 1)\"/g" "${rootpath}/docs/json/lspids_arm32_md5.json"
+        echo -e "$cppproj_arm32_md5_text" > "${rootpath}/docs/json/cppproj_arm32_md5.json"
+        sed -i "s/\"message\": \".*\"/\"message\": \"$(md5sum ${rootpath}/linux/android/static/32/lspids.arm32 | cut -d' ' -f 1)\"/g" "${rootpath}/docs/json/cppproj_arm32_md5.json"
         make android64staticall || exit 118
-        lspids_aarch64_md5_text='{\n\t"schemaVersion": 1,\n\t"color": "2E9778",\n\t"label": "lspids.aarch64 MD5",\n\t"message": "PLACEHOLDER",\n\t"labelColor": "1d1d1d",\n\t"style": "for-the-badge",\n\t"namedLogo": "android"\n}'
-        if ! [[ -f "${rootpath}/docs/json/lspids_aarch64_md5.json" ]]; then
-          touch "${rootpath}/docs/json/lspids_aarch64_md5.json"
+        cppproj_aarch64_md5_text='{\n\t"schemaVersion": 1,\n\t"color": "2E9778",\n\t"label": "lspids.aarch64 MD5",\n\t"message": "PLACEHOLDER",\n\t"labelColor": "1d1d1d",\n\t"style": "for-the-badge",\n\t"namedLogo": "android"\n}'
+        if ! [[ -f "${rootpath}/docs/json/cppproj_aarch64_md5.json" ]]; then
+          touch "${rootpath}/docs/json/cppproj_aarch64_md5.json"
         fi
-        echo -e "$lspids_aarch64_md5_text" > "${rootpath}/docs/json/lspids_aarch64_md5.json"
-        sed -i "s/\"message\": \".*\"/\"message\": \"$(md5sum ${rootpath}/linux/android/static/64/lspids.aarch64 | cut -d' ' -f 1)\"/g" "${rootpath}/docs/json/lspids_aarch64_md5.json"
+        echo -e "$cppproj_aarch64_md5_text" > "${rootpath}/docs/json/cppproj_aarch64_md5.json"
+        sed -i "s/\"message\": \".*\"/\"message\": \"$(md5sum ${rootpath}/linux/android/static/64/lspids.aarch64 | cut -d' ' -f 1)\"/g" "${rootpath}/docs/json/cppproj_aarch64_md5.json"
         cd "${rootpath}"
         git add ${rootpath}/docs/json/*
         git config --global user.name 'Lateralus138'

@@ -1,0 +1,9 @@
+cppproj_list=(
+  -h --help
+  -d --directory
+  -m --main
+  -c --class
+  -p --prebuild
+)
+complete -W "$(printf '%s\n' "${cppproj_list[@]}")" cppproj
+

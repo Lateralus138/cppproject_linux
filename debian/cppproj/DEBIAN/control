@@ -1,0 +1,18 @@
+Source: cppproj
+Package: cppproj
+Section: utils
+Priority: optional
+Maintainer: Ian Pride <faithnomoread@yahoo.com>
+Homepage: https://github.com/Lateralus138/cppproject_linux
+Version: 1.0.0
+Installed-Size: 400
+Architecture: amd64
+Depends: libc6
+Description: Linux command line tool to initiate Ian Pride's personal and custom C++ project.
+ Can provide a prebuild script to precompile headers in src/include,
+ build object (.o) files, and compile into a library archive (.a) in
+ src/lib.
+ Non-CMAKE Makefile provides lots of build and clean options for my
+ custom system.
+ My style of project building is not for everyone, but of course,
+ feel free to use it if you like.
