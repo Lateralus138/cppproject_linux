@@ -23,7 +23,7 @@ jobs:
           exit 127
         fi
         make releasedynamic || exit 125
-        ls src/release/dynamic/ 
+        ls release/dynamic/ 
         echo "Planned failure - [255]"
         exit 255
         cd ${rootpath}/linux || exit 127
