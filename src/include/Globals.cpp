@@ -13,7 +13,7 @@ void Globals::pch_content_create(Parameters &params)
     pch_content.append(class_name);
     pch_content.append(".h\"");
   }
-  pch_content.append("\n#endif \\\\ PCH_H\n");
+  pch_content.append("\n#endif // PCH_H\n");
 }
 void Globals::makefile_content_create(Parameters &params)
 {
@@ -189,7 +189,7 @@ void Globals::makefile_content_create(Parameters &params)
     "\nbuildallobjectslinux: cleanobjects"
     "\n	@echo Building object files from $(INCDIR) to $(LIBDIR)"
     "\n	$(shell IFS=$(echo -en \"\\n\\b\") array=( $(OBJSRC) );\\"
-    "\n		for file in \"$$ {array[@]}\";do \\"
+    "\n		for file in \"$${array[@]}\";do \\"
     "\n			lib=$${file//include/lib}; \\"
     "\n			lib=$${lib//.cpp/.o}; \\"
     "\n			$(CXX) $(GTKINC) $(LDFLAG) -c $${file} -o $${lib} $(LDLIBS) $(GTKLIB); \\"
@@ -199,7 +199,7 @@ void Globals::makefile_content_create(Parameters &params)
     "\nbuildallobjectsandroidarm32: cleanobjects"
     "\n	@echo Building object files from $(INCDIR) to $(LIBDIR)"
     "\n	$(shell IFS=$(echo -en \"\\n\\b\") array=( $(OBJSRC) );\\"
-    "\n		for file in \"$$ {array[@]}\";do \\"
+    "\n		for file in \"$${array[@]}\";do \\"
     "\n			lib=$${file//include/lib}; \\"
     "\n			lib=$${lib//.cpp/.o}; \\"
     "\n			$(AND32GXX) $(STFLAG) $(GTKINC) $(LDFLAG) -c $${file} -o $${lib} $(LDLIBS) $(GTKLIB); \\"
@@ -209,7 +209,7 @@ void Globals::makefile_content_create(Parameters &params)
     "\nbuildallobjectsandroidaarch64: cleanobjects"
     "\n	@echo Building object files from $(INCDIR) to $(LIBDIR)"
     "\n	$(shell IFS=$(echo -en \"\\n\\b\") array=( $(OBJSRC) );\\"
-    "\n		for file in \"$$ {array[@]}\";do \\"
+    "\n		for file in \"$${array[@]}\";do \\"
     "\n			lib=$${file//include/lib}; \\"
     "\n			lib=$${lib//.cpp/.o}; \\"
     "\n			$(AND64GXX) $(STFLAG) $(GTKINC) $(LDFLAG) -c $${file} -o $${lib} $(LDLIBS) $(GTKLIB); \\"
