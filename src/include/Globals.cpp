@@ -334,7 +334,7 @@ std::string Globals::class_header_content_create(std::string class_name)
   content.append("\n#define ");
   content.append(class_name);
   content.append("\n");
-  content.append("\n#endif \\\\ ");
+  content.append("\n#endif // ");
   content.append(class_name);
   content.append("\n");
   return content;
